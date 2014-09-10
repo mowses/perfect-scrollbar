@@ -105,7 +105,9 @@
           isRtl = $this.css('direction') === "rtl",
           eventClassName = getEventClassName(),
           railBorderXWidth = parseInt($scrollbarXRail.css('borderLeftWidth'), 10) + parseInt($scrollbarXRail.css('borderRightWidth'), 10),
-          railBorderYWidth = parseInt($scrollbarXRail.css('borderTopWidth'), 10) + parseInt($scrollbarXRail.css('borderBottomWidth'), 10);
+          railBorderYWidth = parseInt($scrollbarXRail.css('borderTopWidth'), 10) + parseInt($scrollbarXRail.css('borderBottomWidth'), 10),
+          railBorderXWidth = isNaN(railBorderXWidth) ? 0 : railBorderXWidth,
+          railBorderYWidth = isNaN(railBorderYWidth) ? 0 : railBorderYWidth;
 
       var updateContentScrollTop = function (currentTop, deltaY) {
         var newTop = currentTop + deltaY,
